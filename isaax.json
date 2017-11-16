@@ -1,0 +1,13 @@
+{
+  "name": "node-red-watch",
+  "version": "0.1.0",
+  "description": "A sample Node-RED flow",
+  "main": "info-watch.json",
+  "author": "Max Korinets",
+  "license": "MIT",
+  "language":"javascript",
+  "scripts": {
+    "start": "node-red info-watch.json"
+  },
+  "dependency": null
+}
