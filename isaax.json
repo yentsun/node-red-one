@@ -7,7 +7,7 @@
   "license": "MIT",
   "language":"javascript",
   "scripts": {
-    "start": "node-red info-watch.json"
+    "start": "/usr/local/bin/node-red --node-args=\"--max-old-space-size=128\" -- -v info-watch.json"
   },
   "dependency": null
 }
