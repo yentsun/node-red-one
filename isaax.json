@@ -7,7 +7,7 @@
   "license": "MIT",
   "language":"json",
   "scripts": {
-    "start": "node-red  -v --userDir=./ --settings settings.js info-watch.json"
+    "start": "node-red -v --userDir=\"./\" --settings settings.js info-watch.json"
   },
   "dependency": null
 }
