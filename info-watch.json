@@ -30,7 +30,7 @@
     "type": "johnny5",
     "z": "6a463095.d3f9a",
     "name": "2x16 LCD",
-    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nnode.on('input', ({payload: {date, time}}) => {\n    lcd\n        .clear()\n        .cursor(0, 0).print(date)\n        .cursor(1, 0).print(time)\n        .cursor(1, 16);\n});\n",
+    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nnode.on('input', ({payload: {date, time}}) => {\n    lcd\n       .cursor(0, 0).print(date)\n        .cursor(1, 0).print(time)\n        .cursor(1, 16);\n});\n",
     "board": "f06f8152.af317",
     "noerr": 0,
     "x": 806,
