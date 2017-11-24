@@ -5,7 +5,7 @@
   "main": "info-watch.json",
   "author": "Max Korinets",
   "license": "MIT",
-  "language":"json",
+  "language":"javascript",
   "scripts": {
     "start": "/usr/local/bin/node-red  -v --userDir=/root/.node-red info-watch.json"
   },
