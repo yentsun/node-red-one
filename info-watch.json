@@ -36,7 +36,7 @@
     "type": "johnny5",
     "z": "f9970505.1f8b98",
     "name": "2x16 LCD",
-    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nconst moment = global.get('moment');\nmoment.locale('en');\n\nnode.on('input', (msg) => {\n    const now = moment(msg.payload);\n    const date = now.format('ll');\n    const time = now.format('LTS');\n    lcd.cursor(0, 0).print(date);\n    lcd.cursor(1, 0).print(time);\n});\n",
+    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nconst moment = global.get('moment');\nmoment.locale('ru');\n\nnode.on('input', (msg) => {\n    const now = moment(msg.payload);\n    const date = now.format('ll');\n    const time = now.format('LTS');\n    lcd.cursor(0, 0).print(date);\n    lcd.cursor(1, 0).print(time);\n});\n",
     "board": "8a059e08.3cde6",
     "noerr": 0,
     "x": 740,
