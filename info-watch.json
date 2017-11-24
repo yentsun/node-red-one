@@ -1,17 +1,65 @@
 [
   {
-    "id": "f9970505.1f8b98",
+    "id": "6a463095.d3f9a",
     "type": "tab",
     "label": "info-watch",
     "disabled": false,
     "info": ""
   },
-
   {
-    "id": "8a059e08.3cde6",
+    "id": "11877e88.330951",
+    "type": "inject",
+    "z": "6a463095.d3f9a",
+    "name": "1 sec",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "1",
+    "crontab": "",
+    "once": false,
+    "x": 360,
+    "y": 203,
+    "wires": [
+      [
+        "eac71a8c.315198"
+      ]
+    ]
+  },
+  {
+    "id": "e5c56187.e1f1f",
+    "type": "johnny5",
+    "z": "6a463095.d3f9a",
+    "name": "2x16 LCD",
+    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nnode.on('input', ({payload: {date, time}}) => {\n    lcd\n        .clear()\n        .cursor(0, 0).print(date)\n        .cursor(1, 0).print(time)\n        .cursor(1, 16);\n});\n",
+    "board": "f06f8152.af317",
+    "noerr": 0,
+    "x": 806,
+    "y": 218,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "eac71a8c.315198",
+    "type": "function",
+    "z": "6a463095.d3f9a",
+    "name": "format time",
+    "func": "const moment = global.get('moment');\nmoment.locale('en');\nconst now = moment(msg.payload);\nconst date = now.format('ll');\nconst time = now.format('LTS');\nreturn {payload: {date, time}};",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 590,
+    "y": 208,
+    "wires": [
+      [
+        "e5c56187.e1f1f"
+      ]
+    ]
+  },
+  {
+    "id": "f06f8152.af317",
     "type": "nodebot",
     "z": "",
-    "name": "nodeMCU",
+    "name": "NodeMCU",
     "username": "",
     "password": "",
     "boardType": "firmata",
@@ -31,38 +79,5 @@
     "uuid": "",
     "token": "",
     "sendUuid": ""
-  },
-  {
-    "id": "4169c727.6f76d8",
-    "type": "johnny5",
-    "z": "f9970505.1f8b98",
-    "name": "2x16 LCD",
-    "func": "const lcd = new five.LCD({controller: \"PCF8574A\"});\nconst moment = global.get('moment');\nmoment.locale('en');\n\nnode.on('input', (msg) => {\n    const now = moment(msg.payload);\n    const date = now.format('ll');\n    const time = now.format('LTS');\n    lcd.cursor(0, 0).print(date);\n    lcd.cursor(1, 0).print(time);\n});\n",
-    "board": "8a059e08.3cde6",
-    "noerr": 0,
-    "x": 740,
-    "y": 220,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "45e2b548.2ec56c",
-    "type": "inject",
-    "z": "f9970505.1f8b98",
-    "name": "",
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "repeat": "1",
-    "crontab": "",
-    "once": false,
-    "x": 470,
-    "y": 180,
-    "wires": [
-      [
-        "4169c727.6f76d8"
-      ]
-    ]
   }
 ]
