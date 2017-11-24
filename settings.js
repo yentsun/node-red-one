@@ -5,7 +5,7 @@ module.exports = {
   debugMaxLength: 1000,
 
   functionGlobalContext: {
-    moment: require('moment')
+    //moment: require('moment')
   },
 
   logging: {
