@@ -1,11 +1,11 @@
 {
   "name": "node-red-watch",
   "version": "0.1.0",
-  "description": "A sample Node-RED flow",
+  "description": "A sample Node-RED flow, displaying date and time on a 2x16 LCD",
   "main": "info-watch.json",
   "author": "Max Korinets",
   "license": "MIT",
-  "language":"javascript",
+  "language":"json",
   "scripts": {
     "start": "/usr/local/bin/node-red  -v --userDir=/root/.node-red info-watch.json"
   },
