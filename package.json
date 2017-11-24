@@ -1,0 +1,25 @@
+{
+  "name": "red-watch",
+  "version": "0.1.0",
+  "description": "A sample Node-RED flow, displaying date and time on a 2x16 LCD",
+  "main": "info-watch.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yentsun/node-red-watch.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Max Korinets",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yentsun/node-red-watch/issues"
+  },
+  "homepage": "https://github.com/yentsun/node-red-watch#readme",
+  "dependencies": {
+    "moment": "^2.19.2"
+  }
+}
